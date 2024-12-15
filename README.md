@@ -1,4 +1,4 @@
-# AShadowFall RPG
+# ShadowFall RPG
 
 This project is a game system made for Foundry VTT. It is based on Shadowfall Game System, a tabletop RPG inspired by the Film Noir.
 

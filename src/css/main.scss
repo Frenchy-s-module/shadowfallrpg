@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Overwrite l'image de pause basique */
+#pause{
+    background:unset;
+}
+#pause img {
+    content: url("../assets/images/pause.png");
+    left: calc(50% - 120px);
+    opacity: 50%;
+    width:240px;
+    height:240px;
+    top: -70px;
+}
+
+/* Overwrite des code de base de Foundry */
+* {
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.limelight-regular {
+    font-family: "Limelight", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.special-elite-regular {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+/* ---------------->  Shadowfall RPG Custom Styles <------------------- */
+
+.shf-craracter-sheet-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.shf-title{
+    padding: 0.3rem 1rem 0.2rem 1rem;
+    background-color: #181717;
+    color:#e9e6e6;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.shf-bordered{
+    border: calc(1rem + 5px) solid transparent;
+    outline: 1px solid #181717;
+    outline-offset: -1rem;
+    background-size: 200% 1px, 1px 200%;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    padding: 0.5rem;
+    background: linear-gradient(#181717 0 0) top, linear-gradient(#181717 0 0) left, linear-gradient(#181717 0 0) bottom, linear-gradient(#181717 0 0) right, none;
+    background-size: 200% 1px, 1px 200%;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+}
+
+.countable{
+    margin:0 0.7rem;
+    &::after{
+        content: "\f0da";
+        font-family: "FontAwesome";
+        font-weight: 900;
+        margin-left:0.7rem;
+        cursor: pointer;
+    }
+    &::before{
+        content: "\f0d9";
+        font-family: "FontAwesome";
+        font-weight: 900;
+        margin-right:0.7rem;
+     
+        cursor: pointer;
+    }
+}
+
+table th, table td{
+    padding: 0.1em 0.5em;
+}

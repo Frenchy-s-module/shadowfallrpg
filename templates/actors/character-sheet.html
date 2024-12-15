@@ -1,0 +1,261 @@
+<form class="shf-bordered" autocomplete="off">
+    <h1 class="shf-title uppercase text-center text-2xl">Confidential</h1>
+
+    <section id="shf-identity" class="flex">
+        <div class="relative">
+            <img class="noborder absolute z-10 top-0 left-1 w-[35px] h-[35px]" src="{{ loadAsset 'attach2.webp' }}"/>
+            <img class="noborder absolute z-10 bottom-0 right-1 w-[35px] h-[35px]" src="{{ loadAsset 'attach2.webp' }}"/>
+            <img class="shf-craracter-sheet-img shadow-xl z-1 rotate-3 m-4" data-edit="img" src="{{actor.img}}"/>
+        </div>
+
+        <div class="flex-1 flex items-center">
+            <div class="flex flex-col p-3">
+                <span class="p-1">
+                    <strong>Name : </strong>
+                    <span class="special-elite-regular mx-2">{{actor.name}}</span>
+                </span>
+                <span class="p-1">
+                    <strong>Alias: </strong> 
+                    <span class="special-elite-regular mx-2">-</span>
+                </span>
+                <span class="p-1">
+                    <strong>Career: </strong>
+                    <span class="special-elite-regular mx-2">Reporter</span>
+                </span>
+            </div>
+            <div class="flex flex-col p-3">
+                <span class="p-1 special-elite-regular">
+                    <i class="fa-solid fa-heart-pulse mr-1"></i> 
+                    <span>Vitals: </span>
+                    <span class="countable">8</span> 
+                    <span>/ 12</span>
+                </span>
+                <span class="p-1 special-elite-regular">
+                    <i class="fa-solid fa-dollar-sign mr-1"></i> 
+                    <span>Cash: </span>
+                    <span class="countable">50</span> 
+                </span>
+                <span class="p-1 special-elite-regular">
+                    <i class="fa-solid fa-user-secret mr-1"></i>
+                    <span>Deduction: </span>
+                    <span class="countable">1</span> 
+                </span>
+            </div>
+        </div>
+    </section>
+    
+    <header id="shf-actor-tabs" class="border-double border-t-4 border-b-4 border-primary flex mt-2 items-center justify-center p-2">
+        <li class="mx-4 font-normal hover:underline cursor-pointer skf-tab-link [&.active]:underline active" data-target="shf-attributes">Attributs & skills</li>
+        <li class="mx-4 font-normal hover:underline cursor-pointer skf-tab-link [&.active]:underline" data-target="shf-inventory">Inventory</li>
+        <li class="mx-4 font-normal hover:underline cursor-pointer skf-tab-link [&.active]:underline" data-target="shf-background">Background</li>
+    </header>
+
+    <section id="shf-attributes" class="py-4 px-2 shf-tab-content hidden [&.active]:flex active">
+        <div class="grid grid-rows-2 gap-5 mr-2 pr-2 border-r-4 border-double">
+            <div>
+                <h3 class="shf-title uppercase">primaries</h3>
+                <ul class="px-2 py-1">
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Strenght</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Dexterity</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">2</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Agility</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">1</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Cognition</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">4</span>
+                    </li>
+                </ul>    
+            </div>
+            <div>
+                <h3 class="shf-title uppercase">secondaries</h3>
+                <ul class="px-2 py-1">
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Perception</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Charisma</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">2</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Determination</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">1</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Knowledge</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">4</span>
+                    </li>
+                </ul>  
+            </div> 
+        </div>
+        <div class="flex-1">
+            <h3 class="shf-title uppercase">Skills</h3>
+            <div class="grid grid-rows-2 gap-[53px]">
+                <ul class="grid grid-cols-2 [&>*:nth-child(odd)]:mr-4 px-2 py-1">
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Melee (str)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Endurance (str)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Stealth (agl)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Dodging (agl)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Lockpicking (dex)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Ranged (dex)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Reasoning (cog)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Memory (cog)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                </ul>
+                <ul class="grid grid-cols-2 [&>*:nth-child(odd)]:mr-4 px-2 py-1">
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Empathy (per)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Investigation (per)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Persuasion (cha)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Uplift (cha)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Analysis (knw)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">First Aid (knw)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Resilience (det)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                    <li class="flex justify-between items-center p-1">
+                        <span class="mr-3 special-elite-regular">Adaptability (det)</span>
+                        <span class="countable border rounded-full border-primary h-6 w-6 flex items-center justify-center">5</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="shf-inventory" class="py-4 px-2 shf-tab-content hidden [&.active]:flex">
+        <div class="flex flex-col w-full">
+            <div class="mb-3">
+                <h5 class="shf-title uppercase">Weapons</h5>
+                <table class="table-auto">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Name</th>
+                            <th>Amo type</th>
+                            <th>Amo loaded</th>
+                            <th class="text-left">Damages</th>
+                            <th class="text-left">Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="special-elite-regular">Revolver</td>
+                            <td class="special-elite-regular text-center">.50</td>
+                            <td class="special-elite-regular text-center">
+                                <span class="countable">6</span>
+                            </td>
+                            <td class="special-elite-regular">1d6</td>
+                            <td class="special-elite-regular">Midrange</td>
+                        </tr>
+                        <tr>
+                            <td class="special-elite-regular">knife</td>
+                            <td class="special-elite-regular text-center">-</td>
+                            <td class="special-elite-regular text-center">-</td>
+                            <td class="special-elite-regular">1d3</td>
+                            <td class="special-elite-regular">Mele</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mb-3">
+                <h5 class="shf-title uppercase">Objects</h5>
+                <table class="table-auto">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Name</th>
+                            <th class="text-center">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="special-elite-regular">.50 Amo box</td>
+                            <td class="special-elite-regular text-center">
+                                <span class="countable special-elite-regular">10</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="special-elite-regular">cigarets</td>
+                            <td class="special-elite-regular text-center">
+                                <span class="countable special-elite-regular">6</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="special-elite-regular">flashlight</td>
+                            <td class="special-elite-regular"></td>
+                        </tr>
+                        <tr>
+                            <td class="special-elite-regular">lockpicks</td>
+                            <td class="special-elite-regular text-center">
+                                <span class="countable special-elite-regular">2</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="shf-background" class="py-4 px-2 shf-tab-content hidden [&.active]:flex">
+        <div class="flex flex-col">
+            <h5 class="shf-title uppercase">Background story</h5>
+            <p class="pt-2 pb-4 special-elite-regular text-justify p-2">
+                James Carter was born in the shadowed backstreets of 1912 Chicago, the son of a gambler who vanished without a word and a worn-out mother who carried her secrets like armor. Growing up in a crumbling tenement, James learned to rely on his wits, developing a sharp eye for detail and an uncanny ability to read people. Drawn to the grit and intrigue of pulp detective novels, he clawed his way to the University of Chicago, where his sharp tongue and relentless curiosity earned him both enemies and a degree. Now a hard-bitten reporter, James prowls the city’s darkest corners, driven by a cynical edge and an unyielding need to uncover the truths everyone else wants to keep buried.
+            </p>
+
+            <h5 class="shf-title uppercase">Unique Trait - Compulsive Gambler</h5>
+            <p class="pt-2 pb-4 special-elite-regular text-justify p-2">
+                James like to gamble with others characters and put money on the table.
+            </p>
+        </div>
+    </section>
+
+</form>

@@ -4,7 +4,7 @@
     "title": "Shadowfall RPG",
     "description": "A custom RPG system for Foundry VTT. Universe Shadowfall inspired by film Noir",
     "version": "1.0.0",
-    "author": [
+    "authors": [
         {
             "name": "Thibault Delavoux",
             "url": "thibaultdelavoux.fr",
@@ -12,25 +12,25 @@
             "discord": "YOUR DISCORD USERNAME HERE"
         }
     ],
-    "minimumCoreVersion": "12.0.0",
-    "compatibleCoreVersion": "12.0.0",
+    "compatibility": {
+        "minimum": "12",
+        "verified": "12",
+        "maximum": "12"
+    },
     "socket": true,
     "scripts": [
     ],
-    "esmodules": [],
+    "esmodules": [
+        "module/main.js"
+    ],
     "styles": [
+        "https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Limelight&family=Special+Elite&display=swap",
         "styles/main.min.css"
     ],
     "packs": [],
-    "languages": [
-        {
-            "lang": "fr",
-            "name": "Français",
-            "path": "lang/fr.json"
-        }
-    ],
     "url": "https://yourwebsite.com",
     "manifest": "https://yourwebsite.com/system.json",
     "download": "https://yourwebsite.com/system.zip",
+    "background": "systems/shadowfallrpg/assets/images/system-background.webp",
     "license": "LICENSE"
 }

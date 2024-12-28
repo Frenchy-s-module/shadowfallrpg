@@ -16,6 +16,9 @@ export const preloadHandlebarsTemplates = async function () {
 		'systems/shadowfallrpg/templates/actors/partials/attribute-line.html',
 		'systems/shadowfallrpg/templates/actors/partials/inventory-weapon-line.html',
 		'systems/shadowfallrpg/templates/actors/partials/inventory-object-line.html',
+
+
+		'systems/shadowfallrpg/templates/forms/partials/countable-input.html',
 	];
 
 	// Load the template parts

@@ -64,25 +64,6 @@
     background-repeat: no-repeat;
 }
 
-.countable{
-    margin:0 0.7rem;
-    &::after{
-        content: "\f0da";
-        font-family: "FontAwesome";
-        font-weight: 900;
-        margin-left:0.7rem;
-        cursor: pointer;
-    }
-    &::before{
-        content: "\f0d9";
-        font-family: "FontAwesome";
-        font-weight: 900;
-        margin-right:0.7rem;
-     
-        cursor: pointer;
-    }
-}
-
 table th, table td{
     padding: 0.1em 0.5em;
 }

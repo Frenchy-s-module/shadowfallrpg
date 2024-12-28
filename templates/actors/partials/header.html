@@ -24,18 +24,18 @@
             <span class="p-1 special-elite-regular">
                 <i class="fa-solid fa-heart-pulse mr-1"></i> 
                 <span>Vitals: </span>
-                <span class="countable">{{ shadowfallCall shadowfallActor 'getLife' }}</span> 
+                {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getLife')}}
                 <span>/ 12</span>
             </span>
             <span class="p-1 special-elite-regular">
                 <i class="fa-solid fa-dollar-sign mr-1"></i> 
                 <span>Cash: </span>
-                <span class="countable">50</span> 
+                {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=50}}
             </span>
             <span class="p-1 special-elite-regular">
                 <i class="fa-solid fa-user-secret mr-1"></i>
                 <span>Deduction: </span>
-                <span class="countable">{{ shadowfallCall shadowfallActor 'getDataByLabel' 'ip' }}</span> 
+                {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getDataByLabel' 'ip')}}
             </span>
         </div>
     </div>

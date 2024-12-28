@@ -1,3 +1,4 @@
+import { CountableInput } from "../forms/CountableInput.js";
 import { ShadowfallActor } from "./ShadowfallActor.js";
 
 /**
@@ -42,6 +43,11 @@ export class ShadowfallActorSheet extends ActorSheet {
 
         const tabs = html.find('#shf-actor-tabs').get(0);
         tabs && this._tabsListeners(tabs);
+
+        // Ajouter les listeners pour les éléments countable
+        html.find('.shf-countable').each((i, el) => {
+            new CountableInput(el);
+        });
     }
 
     /** ------------------------------------- ShadowFall RPG Functions ----------------------------  */

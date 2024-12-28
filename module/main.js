@@ -15,6 +15,5 @@ Hooks.once("init", () => {
 		types: ['character'],
 		makeDefault: true,
 	});
-
     
 });

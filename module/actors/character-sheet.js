@@ -1,3 +1,5 @@
+import { ShadowfallActor } from "./ShadowfallActor.js";
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -23,6 +25,12 @@ export class ShadowfallActorSheet extends ActorSheet {
 
     getData(){
         const data = super.getData();
+        try{
+            data.shadowfallActor = new ShadowfallActor(data.actor);
+        } catch (error) {
+            console.error("Failed to create ShadowfallActor:", error);
+            ui.notifications.error("Error loading character sheet: Invalid actor data");
+        }
         return data;
     }
 

@@ -3,45 +3,32 @@
         <div>
             <h3 class="shf-title uppercase">primaries</h3>
             <ul class="px-2 py-1">
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Strenght" value=5 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Dexterity" value=2 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Agility" value=1 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Cognition" value=4 }}
+                {{#shadowfallEach shadowfallActor 'getPrimaries'}}
+                    {{#each this as |attr key|}}
+                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label value=attr.value }}
+                    {{/each}}
+                {{/shadowfallEach}}
             </ul>    
         </div>
         <div>
             <h3 class="shf-title uppercase">secondaries</h3>
             <ul class="px-2 py-1">
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Perception" value=5 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Charisma" value=2 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Determination" value=1 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Knowledge" value=4 }}
+                {{#shadowfallEach shadowfallActor 'getSecondaries'}}
+                    {{#each this as |attr key|}}
+                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label value=attr.value }}
+                    {{/each}}
+                {{/shadowfallEach}}
             </ul>  
         </div> 
     </div>
     <div class="flex-1">
         <h3 class="shf-title uppercase">Skills</h3>
-        <div class="grid grid-rows-2 gap-[53px]">
-            <ul class="grid grid-cols-2 [&>*:nth-child(odd)]:mr-4 px-2 py-1">
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Melee (str)" value=5 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Endurance (str)" value=2 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Stealth (agl)" value=4 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Dodging (agl)" value=3 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Lockpicking (dex)" value=3 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Ranged (dex)" value=3 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Reasoning (cog)" value=2 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Memory (cog)" value=2 }}
-            </ul>
-            <ul class="grid grid-cols-2 [&>*:nth-child(odd)]:mr-4 px-2 py-1">
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Empathy (per)" value=5 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Investigation (per)" value=4 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Persuasion (cha)" value=2 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Uplift (cha)" value=1 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Analysis (knw)" value=5 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="First Aid (knw)" value=4 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Resilience (det)" value=1 }}
-                {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label="Adaptability (det)" value=3 }}
-            </ul>
-        </div>
+        <ul class="grid grid-cols-2 [&>*:nth-child(odd)]:mr-4 px-2 py-1">
+            {{#shadowfallEach shadowfallActor 'getSkills'}}
+                {{#each this as |attr key|}}
+                    {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html"  label=(formatSkillLabel attr.label attr.ability) value=attr.value }}
+                {{/each}}
+            {{/shadowfallEach}}
+        </ul>
     </div>
 </section>

@@ -32,4 +32,27 @@ export const registerHelpers = (config) => {
     Handlebars.registerHelper('default', function(value, defaultValue) {
         return value != null ? value : defaultValue;
     });
+
+    // Helper simple pour appeler des méthodes et retourner leur valeur
+    Handlebars.registerHelper('shadowfallCall', function(object, methodName, ...args) {
+        if (object && typeof object[methodName] === 'function') {
+            return object[methodName].apply(object, args);
+        }
+        return '';
+    });
+
+    // Helper block pour itérer sur les résultats d'une méthode
+    Handlebars.registerHelper('shadowfallEach', function(object, methodName, ...args) {
+        if (object && typeof object[methodName] === 'function') {
+            const result = object[methodName].apply(object, args);
+            const options = args[args.length - 1];
+            return options.fn(result);
+        }
+        return '';
+    });
+
+    // Helper pour formater le label des compétences
+    Handlebars.registerHelper('formatSkillLabel', function(label, ability) {
+        return `${label} (${ability})`;
+    });
 };

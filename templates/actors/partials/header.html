@@ -1,0 +1,42 @@
+<section id="shf-identity" class="flex">
+    <div class="relative">
+        <img class="noborder absolute z-10 top-0 left-1 w-[35px] h-[35px]" src="{{ loadAsset 'attach2.webp' }}"/>
+        <img class="noborder absolute z-10 bottom-0 right-1 w-[35px] h-[35px]" src="{{ loadAsset 'attach2.webp' }}"/>
+        <img class="shf-craracter-sheet-img shadow-xl z-1 rotate-3 m-4" data-edit="img" src="{{actor.img}}"/>
+    </div>
+
+    <div class="flex-1 flex items-center">
+        <div class="flex flex-col p-3">
+            <span class="p-1">
+                <strong>Name : </strong>
+                <span class="special-elite-regular mx-2">{{actor.name}}</span>
+            </span>
+            <span class="p-1">
+                <strong>Alias: </strong> 
+                <span class="special-elite-regular mx-2">-</span>
+            </span>
+            <span class="p-1">
+                <strong>Career: </strong>
+                <span class="special-elite-regular mx-2">Reporter</span>
+            </span>
+        </div>
+        <div class="flex flex-col p-3">
+            <span class="p-1 special-elite-regular">
+                <i class="fa-solid fa-heart-pulse mr-1"></i> 
+                <span>Vitals: </span>
+                <span class="countable">8</span> 
+                <span>/ 12</span>
+            </span>
+            <span class="p-1 special-elite-regular">
+                <i class="fa-solid fa-dollar-sign mr-1"></i> 
+                <span>Cash: </span>
+                <span class="countable">50</span> 
+            </span>
+            <span class="p-1 special-elite-regular">
+                <i class="fa-solid fa-user-secret mr-1"></i>
+                <span>Deduction: </span>
+                <span class="countable">1</span> 
+            </span>
+        </div>
+    </div>
+</section>

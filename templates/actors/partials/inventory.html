@@ -1,0 +1,39 @@
+<section id="shf-inventory" class="py-4 px-2 shf-tab-content hidden [&.active]:flex">
+    <div class="flex flex-col w-full">
+        <div class="mb-3">
+            <h5 class="shf-title uppercase">Weapons</h5>
+            <table class="table-auto">
+                <thead>
+                    <tr>
+                        <th class="text-left">Name</th>
+                        <th>Amo type</th>
+                        <th>Amo loaded</th>
+                        <th class="text-left">Damages</th>
+                        <th class="text-left">Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{> "systems/shadowfallrpg/templates/actors/partials/inventory-weapon-line.html" label="Revolver" type=".50" loaded="8" damages="1d6" range="Midrange"}}
+                    {{> "systems/shadowfallrpg/templates/actors/partials/inventory-weapon-line.html" label="knife"damages="1d3" range="Mele"}}
+                </tbody>
+            </table>
+        </div>
+        <div class="mb-3">
+            <h5 class="shf-title uppercase">Objects</h5>
+            <table class="table-auto">
+                <thead>
+                    <tr>
+                        <th class="text-left">Name</th>
+                        <th class="text-center">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{> "systems/shadowfallrpg/templates/actors/partials/inventory-object-line.html" label=".50 Amo box" quantity="10"}}
+                    {{> "systems/shadowfallrpg/templates/actors/partials/inventory-object-line.html" label="cigarettes" quantity="6"}}
+                    {{> "systems/shadowfallrpg/templates/actors/partials/inventory-object-line.html" label="flashlight"}}
+                    {{> "systems/shadowfallrpg/templates/actors/partials/inventory-object-line.html" label="lockpicks" quantity="2"}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

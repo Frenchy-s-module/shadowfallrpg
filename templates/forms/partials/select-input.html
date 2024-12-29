@@ -1,4 +1,4 @@
-<select class="shf-select bg-transparent border-none borcer-b border-primary/20 outline-none focus:outline-none focus:ring-0 special-elite-regular p-1" data-path="{{path}}">
+<select class="shf-select w-full bg-transparent border-0 border-b border-primary/20 outline-none focus:outline-none focus:ring-0 special-elite-regular p-1" data-path="{{path}}">
     {{#each content}}
         <option value="{{@key}}" {{#if (eq ../value @key)}}selected{{/if}}>
             {{this.label}}

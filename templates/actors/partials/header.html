@@ -17,9 +17,9 @@
                     {{> "systems/shadowfallrpg/templates/forms/partials/text-input.html" value=( shadowfallCall shadowfallActor 'getValueByPath' 'general' 'alias') path=(shadowfallPath shadowfallActor 'general' 'alias') }}
                 </span>
             </span>
-            <span class="p-1">
+            <span class="flex p-1">
                 <strong>Career: </strong>
-                <span class="special-elite-regular mx-2">
+                <span class="special-elite-regular mx-2 flex-1">
                     {{> "systems/shadowfallrpg/templates/forms/partials/select-input.html" 
                         value=(shadowfallCall shadowfallActor 'getValueByPath' 'general' 'career') 
                         path=(shadowfallPath shadowfallActor 'general' 'career')

@@ -5,7 +5,7 @@
             <ul class="px-2 py-1">
                 {{#shadowfallEach shadowfallActor 'getPrimaries'}}
                     {{#each this as |attr key|}}
-                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label value=attr.value }}
+                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label path=(shadowfallPath ../../shadowfallActor "primary" key) value=attr.value }}
                     {{/each}}
                 {{/shadowfallEach}}
             </ul>    
@@ -15,7 +15,7 @@
             <ul class="px-2 py-1">
                 {{#shadowfallEach shadowfallActor 'getSecondaries'}}
                     {{#each this as |attr key|}}
-                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label value=attr.value }}
+                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label path=(shadowfallPath ../../shadowfallActor "secondary" key) value=attr.value }}
                     {{/each}}
                 {{/shadowfallEach}}
             </ul>  
@@ -26,7 +26,7 @@
         <ul class="grid grid-cols-2 [&>*:nth-child(odd)]:mr-4 px-2 py-1">
             {{#shadowfallEach shadowfallActor 'getSkills'}}
                 {{#each this as |attr key|}}
-                    {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html"  label=(formatSkillLabel attr.label attr.ability) value=attr.value }}
+                    {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html"  label=(formatSkillLabel attr.label attr.ability) path=(shadowfallPath ../../shadowfallActor "skill" key) value=attr.value }}
                 {{/each}}
             {{/shadowfallEach}}
         </ul>

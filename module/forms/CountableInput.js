@@ -1,9 +1,13 @@
+import { ShadowfallActor } from "../actors/ShadowfallActor.js";
+
 export class CountableInput {
-    constructor(element) {
+    constructor(element, actor) {
         this.element = element;
+        this.actor   = new ShadowfallActor(actor);
+        this.path    = element.dataset.path;
         this.valueElement = element.querySelector('.shf-countable-value');
-        this.minusButton = element.querySelector('.shf-countable-minus');
-        this.plusButton = element.querySelector('.shf-countable-plus');
+        this.minusButton  = element.querySelector('.shf-countable-minus');
+        this.plusButton   = element.querySelector('.shf-countable-plus');
         
         this._initializeListeners();
     }
@@ -21,6 +25,8 @@ export class CountableInput {
         // Ensure the value is never negative
         const validValue = Math.max(0, newValue);
         this.valueElement.textContent = validValue;
+        
+        this.actor.updateValue(this.path, validValue);
     }
 
     _increment() {

@@ -45,8 +45,8 @@ export class ShadowfallActorSheet extends ActorSheet {
         tabs && this._tabsListeners(tabs);
 
         // Ajouter les listeners pour les éléments countable
-        html.find('.shf-countable').each((i, el) => {
-            new CountableInput(el);
+        html.find('.shf-countable').each((i, el) => { 
+            const input = new CountableInput(el, this.actor);
         });
     }
 

@@ -13,29 +13,29 @@
             </span>
             <span class="p-1">
                 <strong>Alias: </strong> 
-                <span class="special-elite-regular mx-2">{{ shadowfallCall shadowfallActor 'getDataByLabel' 'alias' }}</span>
+                <span class="special-elite-regular mx-2">{{ shadowfallCall shadowfallActor 'getValueByPath' 'general' 'alias' }}</span>
             </span>
             <span class="p-1">
                 <strong>Career: </strong>
-                <span class="special-elite-regular mx-2">{{ shadowfallCall shadowfallActor 'getDataByLabel' 'career' }}</span>
+                <span class="special-elite-regular mx-2">{{ shadowfallCall shadowfallActor 'getValueByPath' 'general' 'career' }}</span>
             </span>
         </div>
         <div class="flex flex-col p-3">
             <span class="p-1 special-elite-regular">
                 <i class="fa-solid fa-heart-pulse mr-1"></i> 
                 <span>Vitals: </span>
-                {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getLife')}}
+                {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getValueByPath' 'health') path=(shadowfallPath shadowfallActor 'health') }}
                 <span>/ 12</span>
             </span>
             <span class="p-1 special-elite-regular">
                 <i class="fa-solid fa-dollar-sign mr-1"></i> 
                 <span>Cash: </span>
-                {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=50}}
+                {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getValueByPath' 'general' 'cash') path=(shadowfallPath shadowfallActor 'general' 'cash')}}
             </span>
             <span class="p-1 special-elite-regular">
                 <i class="fa-solid fa-user-secret mr-1"></i>
                 <span>Deduction: </span>
-                {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getDataByLabel' 'ip')}}
+                {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getValueByPath' 'general' 'ip') path=(shadowfallPath shadowfallActor 'general' 'ip')}}
             </span>
         </div>
     </div>

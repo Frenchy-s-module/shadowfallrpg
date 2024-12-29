@@ -9,43 +9,31 @@ export class ShadowfallActor{
         return this.actor.name;
     }
 
-    getLife(){
-        return this.actor.system.header.health.value ?? 0;
-    }
-
     getImage(){
         return this.actor.img;
     }
 
-    getPrimaryByLabel(key){
-        return this.actor.system.attributes.primary[key]?.value;
-    }
-
-    getSecondaryByLabel(key){
-        return this.actor.system.attributes.secondary[key]?.value;
-    }
-
-    getSkillByLabel(key){
-        return this.actor.system.skills[key]?.value;
-    }
-
-    getDataByLabel(key){
-        return this.actor.system.general[key]?.value;
-    }
-
     async updateValue(path, value) {
-        const updateData = {};
-        updateData[path] = value;
-        return await this.actor.update({ "system": updateData });
+        console.warn(path, value);
+        await this.actor.update({ "system": {[path]: value} });
     }
 
-    __validateActor(actor){
-        if(!actor || actor.type !== "character"){
-            throw new Error("Invalid actor data");
-        }
+    getValueByPath(type, key) {
+        const path = this.getPathForValue(type, key);
+        if (!path) return null;
+        return path.split('.').reduce((obj, key) => obj?.[key], this.actor.system);
     }
 
-
+    getPathForValue(type, key) {
+        const paths = {
+            'health': 'general.health',
+            'primary': `attributes.primary.${key}`,
+            'secondary': `attributes.secondary.${key}`,
+            'skill': `skills.${key}`,
+            'general': `general.${key}`
+        };
+        return paths[type] ? paths[type] + '.value' : null;
+    }
 
     getPrimaries(){
         return this.actor.system.attributes.primary;
@@ -61,5 +49,12 @@ export class ShadowfallActor{
 
     getCareer(){
         return this.actor.system.general.career;
+    }
+
+
+    __validateActor(actor){
+        if(!actor || actor.type !== "character"){
+            throw new Error("Invalid actor data");
+        }
     }
 }

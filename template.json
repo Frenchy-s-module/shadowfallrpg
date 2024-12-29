@@ -3,12 +3,6 @@
         "types": ["character"],
         "character": {
             "header": {
-                "health": {
-                    "value": 0,
-                    "label": "Health",
-                    "mod": 0,
-                    "max": 0
-                },
                 "npc": false
             },
             "attributes": {
@@ -159,6 +153,16 @@
                 "ip": {
                     "value": 0,
                     "max": 3
+                },
+                "cash": {
+                    "value": 0,
+                    "max": 9999
+                },
+                "health": {
+                    "value": 0,
+                    "label": "Health",
+                    "mod": 0,
+                    "max": 0
                 }
             }
         }

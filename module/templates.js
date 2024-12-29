@@ -54,6 +54,12 @@ export const registerHelpers = (config) => {
         return '';
     });
 
+    // Helper pour obtenir le chemin d'une valeur
+    Handlebars.registerHelper('shadowfallPath', function(actor, type, key) {
+        if (!actor) return '';
+        return actor.getPathForValue(type, key);
+    });
+
     // Helper pour formater le label des compétences
     Handlebars.registerHelper('formatSkillLabel', function(label, ability) {
         return `${label} (${ability})`;

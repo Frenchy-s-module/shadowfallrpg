@@ -146,6 +146,10 @@
                     "value": "",
                     "label": "appearance"
                 },
+                "backstory": {
+                    "value": "",
+                    "label": "backstory"
+                },
                 "xp": {
                     "value": 0,
                     "max": 20

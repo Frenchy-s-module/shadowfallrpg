@@ -1,0 +1,44 @@
+{
+    "careers": {
+        "detective": {
+            "label": "Detective",
+            "description": "A private investigator solving mysteries in the dark alleys of the city"
+        },
+        "reporter": {
+            "label": "Reporter",
+            "description": "A journalist seeking the truth, no matter the cost"
+        },
+        "charmer": {
+            "label": "Charmer",
+            "description": "A mysterious and seductive figure who weaves intrigue through charm and manipulation"
+        },
+        "police": {
+            "label": "Police Officer",
+            "description": "A law enforcer navigating between duty and corruption"
+        },
+        "medic": {
+            "label": "Medic",
+            "description": "A skilled healer working in the shadows, treating both body and secrets"
+        },
+        "artist": {
+            "label": "Artist",
+            "description": "A tormented creator capturing the essence of the city in their art"
+        },
+        "ex_criminal": {
+            "label": "Former Criminal",
+            "description": "A person seeking redemption, but haunted by their past"
+        },
+        "professor": {
+            "label": "Professor",
+            "description": "An intellectual whose knowledge could be as dangerous as it is valuable"
+        },
+        "taxi_driver": {
+            "label": "Taxi Driver",
+            "description": "A silent observer of the city's nocturnal secrets"
+        },
+        "bartender": {
+            "label": "Bartender",
+            "description": "An unwitting confidant, witness to the intrigues woven at the counter"
+        }
+    }
+}

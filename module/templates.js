@@ -19,6 +19,8 @@ export const preloadHandlebarsTemplates = async function () {
 
 
 		'systems/shadowfallrpg/templates/forms/partials/countable-input.html',
+		'systems/shadowfallrpg/templates/forms/partials/text-input.html',
+		'systems/shadowfallrpg/templates/forms/partials/select-input.html',
 	];
 
 	// Load the template parts
@@ -63,5 +65,10 @@ export const registerHelpers = (config) => {
     // Helper pour formater le label des compétences
     Handlebars.registerHelper('formatSkillLabel', function(label, ability) {
         return `${label} (${ability})`;
+    });
+
+    // Helper pour la comparaison dans les templates
+    Handlebars.registerHelper('eq', function(a, b) {
+        return a === b;
     });
 };

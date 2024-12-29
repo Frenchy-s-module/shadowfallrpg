@@ -1,9 +1,8 @@
 <section id="shf-background" class="py-4 px-2 shf-tab-content hidden [&.active]:flex">
-    <div class="flex flex-col">
+    <div class="flex flex-col w-full">
         <h5 class="shf-title uppercase">Background story</h5>
-        <p class="pt-2 pb-4 special-elite-regular text-justify p-2">
-            {{ backstory }}
-            <!-- James Carter was born in the shadowed backstreets of 1912 Chicago, the son of a gambler who vanished without a word and a worn-out mother who carried her secrets like armor. Growing up in a crumbling tenement, James learned to rely on his wits, developing a sharp eye for detail and an uncanny ability to read people. Drawn to the grit and intrigue of pulp detective novels, he clawed his way to the University of Chicago, where his sharp tongue and relentless curiosity earned him both enemies and a degree. Now a hard-bitten reporter, James prowls the city's darkest corners, driven by a cynical edge and an unyielding need to uncover the truths -->
+        <p contenteditable="true" class="pt-2 pb-4 special-elite-regular text-justify p-2 border-none border-b border-primary min-h-[300px] w-full shf-editable-input" data-path={{ shadowfallPath shadowfallActor 'general' 'backstory'}}>
+            {{ shadowfallCall shadowfallActor 'getValueByPath' 'general' 'backstory' }}
         </p>
     </div>
 </section>

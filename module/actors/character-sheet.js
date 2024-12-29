@@ -1,5 +1,8 @@
 import { CountableInput } from "../forms/CountableInput.js";
+import { EditableInput } from "../forms/EditableInput.js";
+import { CareerSelect } from "../forms/CareerSelect.js";
 import { ShadowfallActor } from "./ShadowfallActor.js";
+import { SHADOWFALL } from "../config.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -24,15 +27,16 @@ export class ShadowfallActorSheet extends ActorSheet {
 		return `${path}${this.actor.type}-sheet.html`;
 	}
 
-    getData(){
-        const data = super.getData();
-        try{
-            data.shadowfallActor = new ShadowfallActor(data.actor);
-        } catch (error) {
-            console.error("Failed to create ShadowfallActor:", error);
-            ui.notifications.error("Error loading character sheet: Invalid actor data");
-        }
-        return data;
+    async getData(){
+        const context = await super.getData();
+        
+        // Créer l'acteur Shadowfall
+        const shadowfallActor = new ShadowfallActor(this.actor);
+        
+        // Ajouter les données au contexte
+        context.shadowfallActor = shadowfallActor;
+        context.careers = SHADOWFALL.careers || {};
+        return context;
     }
 
     /**
@@ -46,7 +50,15 @@ export class ShadowfallActorSheet extends ActorSheet {
 
         // Ajouter les listeners pour les éléments countable
         html.find('.shf-countable').each((i, el) => { 
-            const input = new CountableInput(el, this.actor);
+            new CountableInput(el, this.actor);
+        });
+
+        html.find('.shf-editable-input').each((i, el) => {
+            new EditableInput(el, this.actor);
+        });
+
+        html.find('.shf-select').each((i, el) => {
+            new CareerSelect(el, this.actor);
         });
     }
 

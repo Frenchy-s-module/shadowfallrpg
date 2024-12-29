@@ -14,7 +14,6 @@ export class ShadowfallActor{
     }
 
     async updateValue(path, value) {
-        console.warn(path, value);
         await this.actor.update({ "system": {[path]: value} });
     }
 

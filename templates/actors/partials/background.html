@@ -1,6 +1,6 @@
 <section id="shf-background" class="py-4 px-2 shf-tab-content hidden [&.active]:flex">
     <div class="flex flex-col w-full">
-        <h5 class="shf-title uppercase">Background story</h5>
+        <h5 class="shf-title uppercase">{{localize "SHADOWFALL.CharacterSheet.Background"}}</h5>
         <p contenteditable="true" class="pt-2 pb-4 special-elite-regular text-justify p-2 border-none border-b border-primary min-h-[300px] w-full shf-editable-input" data-path={{ shadowfallPath shadowfallActor 'general' 'backstory'}}>
             {{ shadowfallCall shadowfallActor 'getValueByPath' 'general' 'backstory' }}
         </p>

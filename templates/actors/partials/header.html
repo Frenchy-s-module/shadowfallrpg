@@ -8,17 +8,17 @@
     <div class="flex-1 flex items-center">
         <div class="flex flex-col p-3">
             <span class="p-1">
-                <strong>Name : </strong>
+                <strong>{{localize "SHADOWFALL.CharacterSheet.Name"}} : </strong>
                 <span class="special-elite-regular mx-2">{{ shadowfallCall shadowfallActor 'getName'}} </span>
             </span>
             <span class="p-1">
-                <strong>Alias: </strong> 
+                <strong>{{localize "SHADOWFALL.CharacterSheet.Alias"}}: </strong> 
                 <span class="special-elite-regular mx-2">
                     {{> "systems/shadowfallrpg/templates/forms/partials/text-input.html" value=( shadowfallCall shadowfallActor 'getValueByPath' 'general' 'alias') path=(shadowfallPath shadowfallActor 'general' 'alias') }}
                 </span>
             </span>
             <span class="flex p-1">
-                <strong>Career: </strong>
+                <strong>{{localize "SHADOWFALL.CharacterSheet.Career"}}: </strong>
                 <span class="special-elite-regular mx-2 flex-1">
                     {{> "systems/shadowfallrpg/templates/forms/partials/select-input.html" 
                         value=(shadowfallCall shadowfallActor 'getValueByPath' 'general' 'career') 
@@ -30,18 +30,18 @@
         <div class="flex flex-col p-3">
             <span class="p-1 special-elite-regular">
                 <i class="fa-solid fa-heart-pulse mr-1"></i> 
-                <span>Vitals: </span>
+                <span>{{localize "SHADOWFALL.CharacterSheet.Vitals"}}: </span>
                 {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getValueByPath' 'health') path=(shadowfallPath shadowfallActor 'health') }}
                 <span>/ 12</span>
             </span>
             <span class="p-1 special-elite-regular">
                 <i class="fa-solid fa-dollar-sign mr-1"></i> 
-                <span>Cash: </span>
+                <span>{{localize "SHADOWFALL.CharacterSheet.Cash"}}: </span>
                 {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getValueByPath' 'general' 'cash') path=(shadowfallPath shadowfallActor 'general' 'cash')}}
             </span>
             <span class="p-1 special-elite-regular">
                 <i class="fa-solid fa-user-secret mr-1"></i>
-                <span>Deduction: </span>
+                <span>{{localize "SHADOWFALL.CharacterSheet.Deduction"}}: </span>
                 {{> "systems/shadowfallrpg/templates/forms/partials/countable-input.html" value=(shadowfallCall shadowfallActor 'getValueByPath' 'general' 'ip') path=(shadowfallPath shadowfallActor 'general' 'ip')}}
             </span>
         </div>

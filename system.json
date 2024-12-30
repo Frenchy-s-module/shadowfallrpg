@@ -18,6 +18,18 @@
         "maximum": "12"
     },
     "socket": true,
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "fr",
+            "name": "Français",
+            "path": "lang/fr.json"
+        }
+    ],
     "scripts": [
     ],
     "esmodules": [

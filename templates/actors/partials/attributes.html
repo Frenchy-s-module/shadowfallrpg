@@ -1,32 +1,32 @@
 <section id="shf-attributes" class="py-4 px-2 shf-tab-content hidden [&.active]:flex active">
     <div class="grid grid-rows-2 gap-5 mr-2 pr-2 border-r-4 border-double">
         <div>
-            <h3 class="shf-title uppercase">primaries</h3>
+            <h3 class="shf-title uppercase">{{localize "SHADOWFALL.CharacterSheet.Primaries"}}</h3>
             <ul class="px-2 py-1">
                 {{#shadowfallEach shadowfallActor 'getPrimaries'}}
                     {{#each this as |attr key|}}
-                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label path=(shadowfallPath ../../shadowfallActor "primary" key) value=attr.value }}
+                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label path=(shadowfallPath ../../shadowfallActor "primary" key) value=attr.value key=key type="Attributes" }}
                     {{/each}}
                 {{/shadowfallEach}}
             </ul>    
         </div>
         <div>
-            <h3 class="shf-title uppercase">secondaries</h3>
+            <h3 class="shf-title uppercase">{{localize "SHADOWFALL.CharacterSheet.Secondaries"}}</h3>
             <ul class="px-2 py-1">
                 {{#shadowfallEach shadowfallActor 'getSecondaries'}}
                     {{#each this as |attr key|}}
-                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label path=(shadowfallPath ../../shadowfallActor "secondary" key) value=attr.value }}
+                        {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html" label=attr.label path=(shadowfallPath ../../shadowfallActor "secondary" key) value=attr.value key=key type="Attributes"}}
                     {{/each}}
                 {{/shadowfallEach}}
             </ul>  
         </div> 
     </div>
     <div class="flex-1">
-        <h3 class="shf-title uppercase">Skills</h3>
+        <h3 class="shf-title uppercase">{{localize "SHADOWFALL.CharacterSheet.Skills"}}</h3>
         <ul class="grid grid-cols-2 [&>*:nth-child(odd)]:mr-4 px-2 py-1">
             {{#shadowfallEach shadowfallActor 'getSkills'}}
                 {{#each this as |attr key|}}
-                    {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html"  label=(formatSkillLabel attr.label attr.ability) path=(shadowfallPath ../../shadowfallActor "skill" key) value=attr.value }}
+                    {{> "systems/shadowfallrpg/templates/actors/partials/attribute-line.html"  label=(formatSkillLabel attr.label attr.ability) path=(shadowfallPath ../../shadowfallActor "skill" key) value=attr.value key=key type="Skills"}}
                 {{/each}}
             {{/shadowfallEach}}
         </ul>

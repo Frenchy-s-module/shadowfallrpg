@@ -1,0 +1,46 @@
+{
+    "SHADOWFALL.CharacterSheet": {
+        "Title": "Confidential",
+        "Primaries": "Primaries",
+        "Secondaries": "Secondaries",
+        "Skills": "Skills",
+        "Competencies": "Attributes & Skills",
+        "Inventory": "Inventory",
+        "Background": "Background",
+        "Name": "Name",
+        "Alias": "Alias",
+        "Career": "Career",
+        "Vitals": "Vitals",
+        "Backstory": "Backstory",
+        "Cash": "Cash",
+        "Deduction": "Deduction Points"
+    },
+    "SHADOWFALL.Attributes": {
+        "str": "Strength",
+        "agl": "Agility",
+        "dex": "Dexterity",
+        "cog": "Cognition",
+        "per": "Perception",
+        "cha": "Charisma",
+        "det": "Determination",
+        "knw": "Knowledge"
+    },
+    "SHADOWFALL.Skills": {
+        "meleeCombat": "Melee Combat",
+        "endurance": "Endurance",
+        "stealth": "Stealth",
+        "dodging": "Dodging",
+        "lockpicking": "Lockpicking",
+        "ranged": "Ranged Combat",
+        "reasoning": "Reasoning",
+        "memory": "Memory",
+        "empathy": "Empathy",
+        "investigation": "Investigation",
+        "persuasion": "Persuasion",
+        "uplift": "Uplift",
+        "analysis": "Analysis",
+        "firstAid": "First Aid",
+        "resilience": "Resilience",
+        "adaptability": "Adaptability"
+    }
+}

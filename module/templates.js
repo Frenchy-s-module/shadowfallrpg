@@ -4,27 +4,43 @@
  * @return {Promise}
  */
 export const preloadHandlebarsTemplates = async function () {
-	// Define template paths to load
-	const templatePaths = [
-		// Actor Sheet Partials
-		'systems/shadowfallrpg/templates/actors/partials/header.html',
-		'systems/shadowfallrpg/templates/actors/partials/navigation.html',
-		'systems/shadowfallrpg/templates/actors/partials/attributes.html',
-		'systems/shadowfallrpg/templates/actors/partials/inventory.html',
-		'systems/shadowfallrpg/templates/actors/partials/background.html',
-
-		'systems/shadowfallrpg/templates/actors/partials/attribute-line.html',
-		'systems/shadowfallrpg/templates/actors/partials/inventory-weapon-line.html',
-		'systems/shadowfallrpg/templates/actors/partials/inventory-object-line.html',
-
-
-		'systems/shadowfallrpg/templates/forms/partials/countable-input.html',
-		'systems/shadowfallrpg/templates/forms/partials/text-input.html',
-		'systems/shadowfallrpg/templates/forms/partials/select-input.html',
-	];
-
-	// Load the template parts
-	return loadTemplates(templatePaths);
+    // Définir le chemin de base des templates
+    const templatePath = "systems/shadowfallrpg/templates";
+    
+    try {
+        // Récupérer la liste des dossiers
+        const rootSearch = await FilePicker.browse("data", templatePath);
+        let allTemplates = [];
+        
+        // Extensions supportées
+        const validExtensions = ['.html', '.hbs'];
+        const isTemplateFile = (file) => validExtensions.some(ext => file.endsWith(ext));
+        
+        // Parcourir chaque dossier trouvé
+        for (const dir of rootSearch.dirs) {
+            const dirFiles = await FilePicker.browse("data", dir);
+            
+            // Ajouter les fichiers template trouvés
+            allTemplates = allTemplates.concat(
+                dirFiles.files.filter(isTemplateFile)
+            );
+            
+            // Chercher dans les sous-dossiers (partials)
+            if (dirFiles.dirs.length > 0) {
+                for (const subDir of dirFiles.dirs) {
+                    const subDirFiles = await FilePicker.browse("data", subDir);
+                    allTemplates = allTemplates.concat(
+                        subDirFiles.files.filter(isTemplateFile)
+                    );
+                }
+            }
+        }
+        
+        return loadTemplates(allTemplates);
+    } catch (error) {
+        console.error("Error loading templates:", error);
+        throw error;
+    }
 };
 
 
